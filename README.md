@@ -138,6 +138,14 @@ claude --model opus --add-dir ~/.claude/skills/vulnhunt-fix-verify \
 
 ## Automation & Scale
 
+### Experimental Codex scanner port
+
+An adapted scanner skill is available in `.agents/skills/vulnhunt-codex/`.
+See [Codex setup and validation](docs/CODEX.md) for installation, static scans,
+local reproduction, provenance, and validation limits. This port covers the
+scanner methodology; its effectiveness on Codex requires separate evaluation.
+The runtime and harness described below continue to use Claude.
+
 ### Headless Runtime Agent (`vulnhunter-agent/`)
 For non-interactive or CI/CD pipelines, `vulnhunter-agent/` wraps the scanner into a headless workflow. It clones targets, executes `/vulnhunt`, publishes results, and opens GitHub issues for confirmed bugs. It connects natively via the direct Anthropic API. 
 
